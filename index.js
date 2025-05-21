@@ -7,9 +7,14 @@ dotenv.config();
 
 const app = express();
 // В продакшн на Elastic Beanstalk краще слухати 80 порт
-const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT;
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://rentalcamps.netlify.app", "http://localhost:3000"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 // Роут для перевірки здоров'я сервера (health check)

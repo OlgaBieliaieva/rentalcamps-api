@@ -1,8 +1,8 @@
 import express from "express";
-import { getCampers } from "../controllers/campersController.js";
+import { getAllCampersFull } from "../controllers/campersController.js";
 
 const router = express.Router();
 
-router.get("/", getCampers);
+router.get("/", getAllCampersFull);
 
 export default router;
