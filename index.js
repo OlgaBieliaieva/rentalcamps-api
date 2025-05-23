@@ -16,7 +16,10 @@ app.use(
   })
 );
 app.use(express.json());
-
+// Роут для перевірки навантаження з loader.io
+// app.get("/loaderio-722f4c02ec9d2c65d9e1a0b8f39faab9.txt", (req, res) => {
+//   res.send("loaderio-722f4c02ec9d2c65d9e1a0b8f39faab9");
+// });
 // Роут для перевірки здоров'я сервера (health check)
 app.get("/api/health", (req, res) => {
   res.status(200).send("OK");
